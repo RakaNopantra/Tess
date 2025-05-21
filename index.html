@@ -1,111 +1,51 @@
-<html>
- <head>
-  <title>
-   Bagas Rakha - Web Developer
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Jumpscare</title>
   <style>
-   body {
-            margin: 0;
-            padding: 0;
-            background-color: #0d0d0d;
-            color: #ffffff;
-            font-family: 'Roboto', sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .navbar {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #0d0d0d;
-        }
-        .navbar .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f5c32c;
-        }
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar ul li {
-            margin: 0 15px;
-        }
-        .navbar ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 18px;
-        }
-        .navbar ul li a.active {
-            color: #f5c32c;
-        }
-        .navbar .github {
-            font-size: 24px;
-            color: #ffffff;
-        }
-        .content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .content .text {
-            margin-bottom: 20px;
-        }
-        .content .text h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin: 0;
-        }
-        .content .text p {
-            font-size: 18px;
-            color: #b3b3b3;
-        }
-        .content .image {
-            border-radius: 50%;
-            border: 5px solid #f5c32c;
-            padding: 10px;
-            background-color: #0d0d0d;
-        }
-        .content .image img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-        }
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    #scare {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    #scare img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
- </head>
- <body>
-  <div class="container">
-   <div class="content">
-    <div class="text">
-     <p>
-      Hello World, I'm
-     </p>
-     <h1>
-      Raka Novan
-     </h1>
-     <p>
-      I Am a vocational high school student, I study computer network engineering.
-     </p>
-     <p>
-      Welcome to My personal website. 👋
-     </p>
-    </div>
-    <a href="https://freeimage.host/i/db3unRe"height="200"><img src="https://iili.io/db3unRe.th.jpg" alt="db3unRe.th.jpg" border="0"><width="200"/a>
-    </div>
-   </div>
+</head>
+<body>
+  <h1>Selamat datang...</h1>
+  <p>Tunggu beberapa saat...</p>
+
+  <div id="scare">
+      <img src="20250503-153757.jpg"/>
+    <audio  src="sound.mp3" autoplay></audio>
   </div>
- </body>
+
+  <script>
+    setTimeout(() => {
+      const scare = document.getElementById('scare');
+      const scream = document.getElementById('scream');
+      scare.style.display = 'flex';
+      scream.play();
+    }, 5000); // Jumpscare muncul setelah 5 detik
+  </script>
+</body>
 </html>
